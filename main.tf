@@ -93,7 +93,7 @@ resource "aws_route53_record" "spf" {
 
     zone_id = "${var.zone_id}"
     name    = ""
-    records = ["MS=${var.ms_txt}","${local.o365_spf}"]
+    records = ["MS=${var.ms_txt}","${local.o365_spf}", "${var.additional_txt_records}"]
     type    = "TXT"
     ttl     = "${var.ttl}"
 }
